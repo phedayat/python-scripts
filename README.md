@@ -18,10 +18,10 @@ digit separately.
 
 ### turt.py
 
-I originally wrote this as part of an interview. Used it again later to begin
-teaching a friend of mine Python. I started toying around with it and have been
-getting some cool results. Currently, it uses some basic geometry to create
-stars with n points.
+Uses Python with Turtle for graphics. I originally wrote this as part of an
+interview. Used it again later to begin teaching a friend of mine Python. I
+started toying around with it and have been getting some cool results.
+Currently, it uses some basic geometry to create stars with n points.
 
 * n ≤ 2 creates a line
 * n = 3 creates a triangle

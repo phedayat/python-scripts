@@ -27,3 +27,14 @@ Currently, it uses some basic geometry to create stars with n points.
 * n = 3 creates a triangle
 * n = 4 creates a square
 * n ≥ 5 creates stars with n points
+
+### Heap.py
+
+A script that shows how Heap's Algorithm works. Heap's Algorithm is meant 
+for finding all the permutations of a list. If you have a list of length
+3, the number of permutations will be 3! or 6.
+
+### Fern.py
+
+Uses Python with Turtle to draw a Barnsley Fern, a fractal that uses four 
+affine transformations to plot out a fern.

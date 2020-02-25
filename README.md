@@ -38,3 +38,9 @@ for finding all the permutations of a list. If you have a list of length
 
 Uses Python with Turtle to draw a Barnsley Fern, a fractal that uses four 
 affine transformations to plot out a fern.
+
+### generators.py
+
+This script finds all the generators of the multiplicative group $(\mathbb{Z}^{*}_{n}, \cdot)$. In group theory, $a \in \mathbb{Z}$ is a generator if $a^i$ for $1 \leq i \leq |\mathbb{Z}^{*}_{n}| = \varphi(n)$ produces every element in the group without repetition. $a^{\varphi(n)} = 1$.
+
+For prime $n$, $\mathbb{Z}^{*}_{n} = \mathbb{Z}_n-\{0\}$, because an element $a \in \mathbb{Z}_n$ is a unit if it's coprime to $n$, i.e. $\gcd{a, n} = 1$. Thus, all elements of $\mathbb{Z}_n$ except $0$ are coprime to $n$.

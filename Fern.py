@@ -19,13 +19,13 @@ for i in range(100000):
     xn = x
     yn = y
     r = random.random() * 100
-    if r < 3:
+    if r < 1:
         x = 0
         y = .16 * yn
-    elif r < 85:
+    elif r < 86:
         x = .85*xn + .04*yn
         y = -.04*xn + .85*yn+1.6
-    elif r < 92:
+    elif r < 93:
         x = .2*xn - .26*yn
         y = .23*xn + .22*yn + 1.6
     else:

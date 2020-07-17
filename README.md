@@ -14,7 +14,7 @@ Meant to put spaces and commas between digits of a long number. I used it as
 part of a Project Euler problem I was working on in Java. Basically I wanted
 to test my code and needed a lot of numbers, so I decided to generate a random
 1000 digit number and use spaceMaker to add commas and spaces to evaluate each
-digit separately.
+digit separately. Realistically, can be modified to use any delimiter.
 
 ### turt.py
 

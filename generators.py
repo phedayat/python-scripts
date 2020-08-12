@@ -14,7 +14,7 @@ for i in range(n + 1):
 print(f"(Z_{n})*: {zn}")
 
 '''
-Now we want to see if k in zn to the power of j in [1, n] produces the same list as zn
+Now we want to see if k to the power of j in zn in [1, n] produces the same list as zn
 '''
 
 generators = []

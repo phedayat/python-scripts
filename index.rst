@@ -1,15 +1,16 @@
-# python-scripts
-
-## Purpose
-
+=====
+python-scripts
+=====
+Purpose
+-----
 As I write more Python scripts, I'll add them here.
 They're nothing impressive or groundbreaking, just simple scripts that allow me
 to work on my Python and general programming skills.
 
-## Scripts
-
-### spaceMaker.py
-
+Scripts
+-----
+spaceMaker.py
+-----
 Meant to put spaces and commas between digits of a long number. I used it as
 part of a Project Euler problem I was working on in Java. Basically I wanted
 to test my code and needed a lot of numbers, so I decided to generate a random

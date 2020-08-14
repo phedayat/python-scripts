@@ -42,7 +42,8 @@ affine transformations to plot out a fern.
 
 generators.py
 ~~~~~~~~~~~~~~~
-This script finds all the generators of the multiplicative group 
+This script finds all the generators of the multiplicative group
+
 .. image:: https://latex.codecogs.com/gif.latex?%28%5Cmathbb%7BZ%7D%5E%7B*%7D%7Bn%7D%2C%20%5Ccdot%29
 
 In group theory, 
@@ -55,7 +56,7 @@ is a generator if
 
 for 
 
-.. image:: https://latex.codecogs.com/gif.latex1%20%5Cleq%20i%20%5Cleq%20%7C%5Cmathbb%7BZ%7D%5E%7B*%7D%7Bn%7D%7C%20%3D%20%5Cvarphi%28n%29 
+.. image:: https://bit.ly/3haHwcJ 
 
 produces every element in the group without repetition. 
 

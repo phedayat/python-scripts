@@ -44,7 +44,7 @@ generators.py
 ~~~~~~~~~~~~~~~
 This script finds all the generators of the multiplicative group 
 
-.. image:: cdot.gif 
+.. image:: 
   
   :target: https://latex.codecogs.com/gif.latex?%28%5Cmathbb%7BZ%7D%5E%7B*%7D%7Bn%7D%2C%20%5Ccdot%29
 

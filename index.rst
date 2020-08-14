@@ -8,7 +8,7 @@ They're nothing impressive or groundbreaking, just simple scripts that allow me
 to work on my Python and general programming skills.
 
 Scripts
---------
+~~~~~~~~
 spaceMaker.py
 -------------
 Meant to put spaces and commas between digits of a long number. I used it as

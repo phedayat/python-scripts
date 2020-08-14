@@ -43,7 +43,45 @@ affine transformations to plot out a fern.
 generators.py
 ~~~~~~~~~~~~~~~
 This script finds all the generators of the multiplicative group 
-.. image:: https://latex.codecogs.com/gif.latex?%28%5Cmathbb%7BZ%7D%5E%7B*%7D%7Bn%7D%2C%20%5Ccdot%29
-In group theory, ![ainznstar](https://latex.codecogs.com/gif.latex?a%20%5Cin%20%5Cmathbb%7BZ%7D%5E%7B*%7D_%7Bn%7D) is a generator if ![ai](https://latex.codecogs.com/gif.latex?a%5Ei) for ![inequality](https://latex.codecogs.com/gif.latex?1%20%5Cleq%20i%20%5Cleq%20%7C%5Cmathbb%7BZ%7D%5E%7B*%7D_%7Bn%7D%7C%20%3D%20%5Cvarphi%28n%29) produces every element in the group without repetition. ![aphi](https://latex.codecogs.com/gif.latex?a%5E%7B%5Cvarphi%28n%29%7D%20%3D%201).
 
-For prime n, ![znnozero](https://latex.codecogs.com/gif.latex?%5Cmathbb%7BZ%7D%5E%7B*%7D_%7Bn%7D%20%3D%20%5Cmathbb%7BZ%7D_n-%5C%7B0%5C%7D), because an element ![ainzn](https://latex.codecogs.com/gif.latex?a%20%5Cin%20%5Cmathbb%7BZ%7D_%7Bn%7D) is a unit if it's coprime to n, i.e. ![gcd](https://latex.codecogs.com/gif.latex?%5Cgcd%7Ba%2C%20n%7D%20%3D%201). Thus, all elements of ![zn](https://latex.codecogs.com/gif.latex?%5Cmathbb%7BZ%7D_n) except 0 are coprime to n. This means all elements of ![zn](https://latex.codecogs.com/gif.latex?%5Cmathbb%7BZ%7D_n) except 0 are units and in ![znstar](https://latex.codecogs.com/gif.latex?%5Cmathbb%7BZ%7D%5E%7B*%7D_%7Bn).
+.. image:: https://latex.codecogs.com/gif.latex?%28%5Cmathbb%7BZ%7D%5E%7B*%7D%7Bn%7D%2C%20%5Ccdot%29
+
+In group theory, 
+
+.. image:: https://latex.codecogs.com/gif.latex?a%20%5Cin%20%5Cmathbb%7BZ%7D%5E%7B*%7D%7Bn%7D
+
+is a generator if 
+
+.. image:: https://latex.codecogs.com/gif.latex?a%5Ei 
+
+for 
+
+.. image:: https://latex.codecogs.com/gif.latex1%20%5Cleq%20i%20%5Cleq%20%7C%5Cmathbb%7BZ%7D%5E%7B*%7D_%7Bn%7D%7C%20%3D%20%5Cvarphi%28n%29 
+
+produces every element in the group without repetition. 
+
+.. image:: https://latex.codecogs.com/gif.latex?a%5E%7B%5Cvarphi%28n%29%7D%20%3D%201
+
+For prime n, 
+
+.. image:: https://latex.codecogs.com/gif.latex?%5Cmathbb%7BZ%7D%5E%7B*%7D_%7Bn%7D%20%3D%20%5Cmathbb%7BZ%7D_n-%5C%7B0%5C%7D
+
+, because an element 
+
+.. image:: https://latex.codecogs.com/gif.latex?a%20%5Cin%20%5Cmathbb%7BZ%7D_%7Bn%7D 
+
+is a unit if it's coprime to n, i.e. 
+
+.. image:: https://latex.codecogs.com/gif.latex?%5Cgcd%7Ba%2C%20n%7D%20%3D%201)
+
+Thus, all elements of 
+
+.. image:: https://latex.codecogs.com/gif.latex?%5Cmathbb%7BZ%7D_n 
+
+except 0 are coprime to n. This means all elements of 
+
+.. image:: https://latex.codecogs.com/gif.latex?%5Cmathbb%7BZ%7D_n 
+
+except 0 are units and in 
+
+.. image:: https://latex.codecogs.com/gif.latex?%5Cmathbb%7BZ%7D%5E%7B*%7D_%7Bn

@@ -49,6 +49,6 @@ For prime n, ![znnozero](https://latex.codecogs.com/gif.latex?%5Cmathbb%7BZ%7D%5
 
 This project is meant to test my skills and to recreate the Graham Scan convex hull algorithm (via [The Algorithm Design Manual](http://www.algorist.com/)).
 
-* `graphicalHull.py`: This is the main file that runs convex hull-related processes. Not to be confused with `main.py`, which is an outdated main file for this project.
+* `graphicalHull.py`: This is the main file that runs a Graham Scan. Not to be confused with `main.py`, which is an outdated main file for this project.
 * `point.py`: The class that defines a point.
 * `main.py`: An outdated main file from the beginning of this project. Instead of a Graham Scan, `main.py` is attempting to perform a Jarvis March; however, there are problems with it and it doesn't always catch all the points within the convex hull. Might return to fix it later.

@@ -25,7 +25,7 @@ class Point:
 
     @staticmethod
     def angleBetween(p1, p2):
-        return math.acos(Point.dot(p1, p2) / (p1.getLength() * p2.getLength()))
+        return math.acos(Point.dot(p1, p2) / float(p1.getLength() * p2.getLength()))
 
     @staticmethod
     def vectorBetween(p1, p2):
@@ -37,12 +37,12 @@ class Point:
 
     @staticmethod
     def edgeAngleBetween(p1, p2, p3):
-        # a = Point.distance(p1, p2)
-        # b = Point.distance(p2, p3)
-        # c = Point.distance(p1, p3)
+        a = Point.distance(p1, p2)
+        b = Point.distance(p2, p3)
+        c = Point.distance(p1, p3)
 
-        a = Point.vectorBetween(p1, p2).getLength()
-        b = Point.vectorBetween(p2, p3).getLength()
-        c = Point.vectorBetween(p1, p3).getLength()
+        # a = Point.vectorBetween(p1, p2).getLength()
+        # b = Point.vectorBetween(p2, p3).getLength()
+        # c = Point.vectorBetween(p1, p3).getLength()
 
-        return math.acos((c**2-b**2-a**2) / (-2 * a * b))
+        return math.acos((b**2-a**2-c**2) / (-2 * a * c))

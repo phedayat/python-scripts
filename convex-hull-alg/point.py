@@ -4,7 +4,7 @@ class Point:
     def __init__(self, xVal = 0, yVal = 0):
         self.x = xVal
         self.y = yVal
-        self.value = {xVal, yVal}
+        self.value = (self.x, self.y)
         self.length = math.sqrt(self.x**2 + self.y**2)
 
     def getX(self):
@@ -25,7 +25,7 @@ class Point:
 
     @staticmethod
     def angleBetween(p1, p2):
-        return math.acos(Point.dot(p1, p2) / float(p1.getLength() * p2.getLength()))
+        return math.acos(Point.dot(p1, p2) / (float(p1.getLength()) * float(p2.getLength())))
 
     @staticmethod
     def vectorBetween(p1, p2):
@@ -46,3 +46,13 @@ class Point:
         # c = Point.vectorBetween(p1, p3).getLength()
 
         return math.acos((b**2-a**2-c**2) / (-2 * a * c))
+
+    @staticmethod
+    def slope(p1, p2):
+        diffY = (p2.getY() - p1.getY())
+        diffX = (p2.getX() - p1.getX())
+
+        if diffX == 0 or diffY == 0:
+            return 0
+        else:
+            return diffY / diffX

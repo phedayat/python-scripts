@@ -2,16 +2,18 @@ import point
 import random
 import turtle
 
-# N = 100
-# L = 1
-# U = 200
-# points = []
-
-# t = turtle.Turtle()
-# t.speed(75)
-
 class GrahamScan:
     def __init__(self, numPoints = 100, lower = 1, upper = 300, pl = [], tu = turtle.Turtle()):
+        '''
+        Constructor for a GrahamScan object
+
+        @param numPoints The number of points in the pointset. Only used to create a list of
+            random points if no list is passed in
+        @param lower The lower bound of any random point created for the list
+        @param upper The upper bound of any random point created for the list
+        @param pl The list of points to find the convex hull of
+        @param tu A turtle object for drawing
+        '''
         self.N = numPoints
         self.L = lower
         self.U = upper

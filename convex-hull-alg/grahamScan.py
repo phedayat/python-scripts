@@ -2,136 +2,147 @@ import point
 import random
 import turtle
 
-N = 100
-L = 1
-U = 200
-points = []
+# N = 100
+# L = 1
+# U = 200
+# points = []
 
-t = turtle.Turtle()
-t.speed(75)
+# t = turtle.Turtle()
+# t.speed(75)
 
-####### Functions #######
+class GrahamScan:
+    def __init__(self, numPoints = 100, lower = 1, upper = 300, pl = [], tu = turtle.Turtle()):
+        self.N = numPoints
+        self.L = lower
+        self.U = upper
+        self.points = pl
+        self.t = tu
 
-def findMinPoint(pl):
-    '''
-    Find the point with the smallest y-value. Ties are resolved by
-    smallest x-value
+        self.t.speed(75)
 
-    @param pl The list of points
+        if self.points == []:
+            self.createPointSet()
 
-    @return The point with smallest y-value (and x-value)
-    '''
-    newPoints = sorted(points, key=lambda x: x.getY())
-    min = 0
+    def createPointSet(self):
+        for i in range(self.N):
+            self.points.append(point.Point(random.randint(self.L, self.U), random.randint(self.L, self.U)))
 
-    for i in range(len(newPoints)):
-        if newPoints[i].getY() == newPoints[min].getY() and newPoints[i].getX() < newPoints[min].getX():
-            min = i
+    def findMinPoint(self, pl):
+        '''
+        Find the point with the smallest y-value. Ties are resolved by
+        smallest x-value
 
-    return newPoints[min]
+        @param pl The list of points
 
-def ccw(p1, p2, p3):
-    '''
-    Determine if the points passed in constitute a counterclockwise turn
+        @return The point with smallest y-value (and x-value)
+        '''
+        newPoints = sorted(self.points, key=lambda x: x.getY())
+        min = 0
 
-    @param p1 The first point. The first point of the first edge
-    @param p1 The second point. The second point of the first edge
-        and first point of the second edge
-    @param p1 The third point. The second point of the second edge
+        for i in range(len(newPoints)):
+            if newPoints[i].getY() == newPoints[min].getY() and newPoints[i].getX() < newPoints[min].getX():
+                min = i
 
-    @return 1 if CCW, otherwise 0
-    '''
-    z = (p2.getX() - p1.getX())*(p3.getY() - p1.getY()) - (p2.getY() - p1.getY())*(p3.getX() - p1.getX())
+        return newPoints[min]
 
-    if z > 0:
-        return 1
-    else:
-        return 0
+    def ccw(self, p1, p2, p3):
+        '''
+        Determine if the points passed in constitute a counterclockwise turn
 
-def createHull(pl, minP):
-    '''
-    Create the list of points that make up the hull
+        @param p1 The first point. The first point of the first edge
+        @param p1 The second point. The second point of the first edge
+            and first point of the second edge
+        @param p1 The third point. The second point of the second edge
 
-    @param pl The list of all points
-    @param minP The point with the smallest y-value (and x-value)
+        @return 1 if CCW, otherwise 0
+        '''
+        z = (p2.getX() - p1.getX())*(p3.getY() - p1.getY()) - (p2.getY() - p1.getY())*(p3.getX() - p1.getX())
 
-    @return A list of points that make up the hull
-    '''
-    hull = [minP]
-
-    pl = sorted(pl, key=lambda x: point.Point.angleBetween(x, minP))
-
-    # First half of hull
-    for i in pl:
-        while len(hull) > 1 and ccw(hull[1], hull[0], i) == 0:
-            hull.pop(0)
-        
-        hull.insert(0, i)
-    
-    # Second half of hull
-    for i in reversed(pl):
-        while len(hull) > 1 and ccw(hull[1], hull[0], i) == 0:
-            hull.pop(0)
-        
-        hull.insert(0, i)
-    
-    return hull
-
-def grahamScan(pl):
-    '''
-    Find the convex hull of a list of points using a Graham Scan
-
-    @param pl The list of points
-    '''
-    # Find point with smallest y-value. Ties are resolved by lowest 
-    # x-value
-    p = findMinPoint(pl)
-
-    # Create the hull
-    hull = createHull(pl, p)
-
-    # Draw the points and the hull
-    drawPoints(pl)
-    drawHull(hull)
-
-def drawPoints(pl):
-    '''
-    Draw the points in the list. First point is always red
-
-    @param pl The list of points to draw
-    '''
-    t.penup()
-
-    for i in range(len(pl)):
-        t.goto(pl[i].getX(), pl[i].getY())
-        t.pendown()
-        if i == 0:
-            t.color('red')
-            t.dot()
+        if z > 0:
+            return 1
         else:
-            t.color('black')
-            t.dot()
-        t.penup()
+            return 0
 
-def drawHull(hl):
-    '''
-    Draw the edges of the hull
+    def createHull(self, pl, minP):
+        '''
+        Create the list of points that make up the hull
 
-    @param hl The list of points in the hull
-    '''
-    t.pendown()
+        @param pl The list of all points
+        @param minP The point with the smallest y-value (and x-value)
 
-    for i in range(len(hl)):
-        t.goto(hl[i].getX(), hl[i].getY())
-    t.penup()
+        @return A list of points that make up the hull
+        '''
+        hull = [minP]
 
-####### End Functions #######
+        pl = sorted(pl, key=lambda x: point.Point.angleBetween(x, minP))
 
-# Create points
-for i in range(N):
-    points.append(point.Point(random.randint(L, U), random.randint(L, U)))
+        # First half of hull
+        for i in pl:
+            while len(hull) > 1 and self.ccw(hull[1], hull[0], i) == 0:
+                hull.pop(0)
+            
+            hull.insert(0, i)
+        
+        # Second half of hull
+        for i in reversed(pl):
+            while len(hull) > 1 and self.ccw(hull[1], hull[0], i) == 0:
+                hull.pop(0)
+            
+            hull.insert(0, i)
+        
+        return hull
+
+    def grahamScan(self):
+        '''
+        Find the convex hull of a list of points using a Graham Scan
+
+        @param pl The list of points
+        '''
+        # Find point with smallest y-value. Ties are resolved by lowest 
+        # x-value
+        p = self.findMinPoint(self.points)
+
+        # Create the hull
+        hull = self.createHull(self.points, p)
+
+        # Draw the points and the hull
+        self.drawPoints(self.points)
+        self.drawHull(hull)
+
+    def drawPoints(self, pl):
+        '''
+        Draw the points in the list. First point is always red
+
+        @param pl The list of points to draw
+        '''
+        self.t.penup()
+
+        for i in range(len(pl)):
+            self.t.goto(pl[i].getX(), pl[i].getY())
+            self.t.pendown()
+            if i == 0:
+                self.t.color('red')
+                self.t.dot()
+            else:
+                self.t.color('black')
+                self.t.dot()
+            self.t.penup()
+
+    def drawHull(self, hl):
+        '''
+        Draw the edges of the hull
+
+        @param hl The list of points in the hull
+        '''
+        self.t.pendown()
+
+        for i in range(len(hl)):
+            self.t.goto(hl[i].getX(), hl[i].getY())
+
+        self.t.penup()
 
 if __name__ == '__main__':
-    grahamScan(points)
+    g = GrahamScan()
+    g.grahamScan()
 
 input('wait')

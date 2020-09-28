@@ -47,7 +47,7 @@ For prime n, ![znnozero](https://latex.codecogs.com/gif.latex?%5Cmathbb%7BZ%7D%5
 
 ### Convex Hull Algorithm
 
-This project is meant to test my skills and to recreate the Graham Scan convex hull algorithm (via [The Algorithm Design Manual](http://www.algorist.com/)).
+This project is meant to test my skills and to recreate the Graham Scan convex hull algorithm (via [The Algorithm Design Manual](http://www.algorist.com/)). Unfinished; `graphicalHull.py` still needs to be fixed, but the convex hulls produced are much better than before.
 
 * `graphicalHull.py`: This is the main file that runs a Graham Scan. Not to be confused with `main.py`, which is an outdated main file for this project.
 * `point.py`: The class that defines a point.

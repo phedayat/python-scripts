@@ -20,7 +20,11 @@ class GrahamScan:
         self.points = pl
         self.t = tu
 
-        self.t.speed(75)
+        self.minPoint = point.Point()
+        
+        turtle.colormode(255)
+        turtle.Screen().bgcolor('grey')
+        self.t.speed(150)
 
         if self.points == []:
             self.createPointSet()
@@ -75,6 +79,7 @@ class GrahamScan:
         @return A list of points that make up the hull
         '''
         hull = [minP]
+        self.minPoint = minP
 
         pl = sorted(pl, key=lambda x: point.Point.angleBetween(x, minP))
 
@@ -92,7 +97,24 @@ class GrahamScan:
             
             hull.insert(0, i)
         
+        hull.pop(0)
         return hull
+
+    def findIdenticalPoints(self, hl):
+        '''
+        Find back and forth patterns in hull.
+        Ex: p1, p2 in hl go p1, p2, p1. Removing that by
+        removing p2 and second p1
+
+        @param hl The list of hull points
+        '''
+        for i in range(len(hl)):
+            if i+2 < len(hl) - 2 and hl[i] == hl[i+2]:
+                print('here')
+                del hl[i+1]
+                del hl[i+2]
+        
+        return hl
 
     def grahamScan(self):
         '''
@@ -106,6 +128,8 @@ class GrahamScan:
 
         # Create the hull
         hull = self.createHull(self.points, p)
+        # hull = self.findIdenticalPoints(hull)
+        # hull.pop(0)
 
         # Draw the points and the hull
         self.drawPoints(self.points)
@@ -122,12 +146,15 @@ class GrahamScan:
         for i in range(len(pl)):
             self.t.goto(pl[i].getX(), pl[i].getY())
             self.t.pendown()
+
             if i == 0:
+                self.t.color(0, 255, 150)
+            elif pl[i].getX() == self.minPoint.getX() and pl[i].getY() == self.minPoint.getY():
                 self.t.color('red')
-                self.t.dot()
             else:
                 self.t.color('black')
-                self.t.dot()
+            
+            self.t.dot()
             self.t.penup()
 
     def drawHull(self, hl):
@@ -139,8 +166,13 @@ class GrahamScan:
         self.t.pendown()
 
         for i in range(len(hl)):
-            self.t.goto(hl[i].getX(), hl[i].getY())
+            if i+1 < len(hl) and hl[i+1].getX() == self.minPoint.getX() and hl[i+1].getY() == self.minPoint.getY():
+                self.t.color('yellow')
+            else:
+                self.t.color('black')
 
+            self.t.goto(hl[i].getX(), hl[i].getY())
+        
         self.t.penup()
 
 if __name__ == '__main__':

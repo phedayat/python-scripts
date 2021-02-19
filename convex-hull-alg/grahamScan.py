@@ -169,7 +169,7 @@ class GrahamScan:
             if i == 1:
                 self.t.pendown()
                 self.t.color('pink')
-            elif i+1 < len(hl) and hl[i+1].getX() == self.minPoint.getX() and hl[i+1].getY() == self.minPoint.getY():
+            elif i < len(hl) and hl[i].getX() == self.minPoint.getX() and hl[i].getY() == self.minPoint.getY():
                 self.t.color('yellow')
             else:
                 self.t.color('black')
@@ -179,7 +179,7 @@ class GrahamScan:
         self.t.penup()
 
 if __name__ == '__main__':
-    g = GrahamScan()
+    g = GrahamScan(numPoints=55)
     g.grahamScan()
 
 input('wait')

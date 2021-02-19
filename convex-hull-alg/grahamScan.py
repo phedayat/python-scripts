@@ -42,14 +42,13 @@ class GrahamScan:
 
         @return The point with smallest y-value (and x-value)
         '''
-        newPoints = sorted(self.points, key=lambda x: x.getY())
-        min = 0
+        newPoints = sorted(self.points, key=lambda x: point.Point.angleBetween(point.Point(1, 0), x))
 
-        for i in range(len(newPoints)):
-            if newPoints[i].getY() == newPoints[min].getY() and newPoints[i].getX() < newPoints[min].getX():
-                min = i
+        # for i in range(len(newPoints)):
+        #     if newPoints[i].getY() == newPoints[min].getY() and newPoints[i].getX() < newPoints[min].getX():
+        #         min = i
 
-        return newPoints[min]
+        return newPoints[len(newPoints) - 1]
 
     def ccw(self, p1, p2, p3):
         '''
@@ -81,7 +80,7 @@ class GrahamScan:
         hull = [minP]
         self.minPoint = minP
 
-        pl = sorted(pl, key=lambda x: point.Point.angleBetween(x, minP))
+        pl = sorted(pl, key=lambda x: (x.getX(), x.getY()))
 
         # First half of hull
         for i in pl:
@@ -125,11 +124,12 @@ class GrahamScan:
         # Find point with smallest y-value. Ties are resolved by lowest 
         # x-value
         p = self.findMinPoint(self.points)
-
-        # Create the hull
+        # self.drawPoints(sorted(self.points, key=lambda x: point.Point.angleBetween(point.Point(1,0), x)))
+        
+        # # Create the hull
         hull = self.createHull(self.points, p)
         # hull = self.findIdenticalPoints(hull)
-        # hull.pop(0)
+        # # hull.pop(0)
 
         # Draw the points and the hull
         self.drawPoints(self.points)

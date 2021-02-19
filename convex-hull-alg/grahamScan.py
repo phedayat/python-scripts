@@ -164,11 +164,10 @@ class GrahamScan:
         @param hl The list of points in the hull
         '''
         self.t.penup()
-        self.t.goto(self.minPoint.getX(), self.minPoint.getY())
-        self.t.pendown()
 
         for i in range(len(hl)):
-            if i == 0:
+            if i == 1:
+                self.t.pendown()
                 self.t.color('pink')
             elif i+1 < len(hl) and hl[i+1].getX() == self.minPoint.getX() and hl[i+1].getY() == self.minPoint.getY():
                 self.t.color('yellow')

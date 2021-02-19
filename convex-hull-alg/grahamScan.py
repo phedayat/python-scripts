@@ -80,23 +80,23 @@ class GrahamScan:
         hull = [minP]
         self.minPoint = minP
 
-        pl = sorted(pl, key=lambda x: (x.getX(), x.getY()))
+        pl = sorted(pl, key=lambda x: point.Point.angleBetween(x, minP))
 
         # First half of hull
         for i in pl:
-            while len(hull) > 1 and self.ccw(hull[1], hull[0], i) == 0:
+            while len(hull) > 1 and self.ccw(hull[0], hull[1], i) == 0:
                 hull.pop(0)
             
             hull.insert(0, i)
         
         # Second half of hull
         for i in reversed(pl):
-            while len(hull) > 1 and self.ccw(hull[1], hull[0], i) == 0:
+            while len(hull) > 1 and self.ccw(hull[0], hull[1], i) == 0:
                 hull.pop(0)
             
             hull.insert(0, i)
         
-        hull.pop(0)
+        # hull.pop(0)
         return hull
 
     def findIdenticalPoints(self, hl):
@@ -163,10 +163,14 @@ class GrahamScan:
 
         @param hl The list of points in the hull
         '''
+        self.t.penup()
+        self.t.goto(self.minPoint.getX(), self.minPoint.getY())
         self.t.pendown()
 
         for i in range(len(hl)):
-            if i+1 < len(hl) and hl[i+1].getX() == self.minPoint.getX() and hl[i+1].getY() == self.minPoint.getY():
+            if i == 0:
+                self.t.color('pink')
+            elif i+1 < len(hl) and hl[i+1].getX() == self.minPoint.getX() and hl[i+1].getY() == self.minPoint.getY():
                 self.t.color('yellow')
             else:
                 self.t.color('black')

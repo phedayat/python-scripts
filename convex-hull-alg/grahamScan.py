@@ -42,13 +42,11 @@ class GrahamScan:
 
         @return The point with smallest y-value (and x-value)
         '''
-        newPoints = sorted(self.points, key=lambda x: point.Point.angleBetween(point.Point(1, 0), x))
+        newPoints = sorted(self.points, key=lambda x: point.Point.angleBetween(point.Point(.1, 0), x))
 
-        # for i in range(len(newPoints)):
-        #     if newPoints[i].getY() == newPoints[min].getY() and newPoints[i].getX() < newPoints[min].getX():
-        #         min = i
+        # newPoints = sorted(self.points, key=lambda x: x.getX())
 
-        return newPoints[len(newPoints) - 1]
+        return newPoints[0]
 
     def ccw(self, p1, p2, p3):
         '''
@@ -101,6 +99,8 @@ class GrahamScan:
 
     def findIdenticalPoints(self, hl):
         '''
+        *UNUSED*
+
         Find back and forth patterns in hull.
         Ex: p1, p2 in hl go p1, p2, p1. Removing that by
         removing p2 and second p1
@@ -172,14 +172,14 @@ class GrahamScan:
             elif i < len(hl) and hl[i].getX() == self.minPoint.getX() and hl[i].getY() == self.minPoint.getY():
                 self.t.color('yellow')
             else:
-                self.t.color('black')
+                self.t.color('blue')
 
             self.t.goto(hl[i].getX(), hl[i].getY())
         
         self.t.penup()
 
 if __name__ == '__main__':
-    g = GrahamScan(numPoints=55)
+    g = GrahamScan(numPoints=100)
     g.grahamScan()
 
 input('wait')

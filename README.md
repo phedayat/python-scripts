@@ -52,3 +52,13 @@ This project is meant to test my skills and to recreate the Graham Scan convex h
 * `graphicalHull.py`: This is the main file that runs a Graham Scan. Not to be confused with `main.py`, which is an outdated main file for this project.
 * `point.py`: The class that defines a point.
 * `main.py`: An outdated main file from the beginning of this project. Instead of a Graham Scan, `main.py` is attempting to perform a Jarvis March; however, there are problems with it and it doesn't always catch all the points within the convex hull. Might return to fix it later.
+
+### Gram-Schmidt Process
+
+This project was originally only supposed to compute the result of running the [Gram-Schmidt]() process on a basis. It became a fun exercise to visualize not only the projections across varying dimensions of bases, but the error of each approximation of $\sin{x}$.
+
+The original motivator for this script was a problem from Sheldon Axler's [*Linear Algebra Done Right*]() regarding the minimization of an integral on the interval $[-\pi, \pi]$ by finding a polynomial approximation of $\sin(x)$ of at most degree 5. Since we operate in the space of continuous real-valued functions within our interval, our inner product is an integral, and this becomes increasingly tedious to compute. It was also because of the inner product space we were working in that I had to use `sympy` to compute the projections. 
+
+Running the script will produce two windows:
+1. The projections of $\sin{x}$ onto polynomial subspaces of varying dimensions. $P_i = \{p(x) | \text{deg}(p) < i\}$ for $i = 2, ...$. The maximum is determined by the number of subplots to create
+2. The MSE loss per basis dimension of the projection and $\sin{x}$

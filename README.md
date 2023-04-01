@@ -40,6 +40,7 @@ Uses Python with Turtle to draw a Barnsley Fern, a fractal that uses four
 affine transformations to plot out a fern.
 
 ### generators.py
+(There are some images embedded here; I'd recommend switching to light mode! :D)
 
 This script finds all the generators of the multiplicative group ![Group](https://latex.codecogs.com/gif.latex?%28%5Cmathbb%7BZ%7D%5E%7B*%7D_%7Bn%7D%2C%20%5Ccdot%29). In group theory, ![ainznstar](https://latex.codecogs.com/gif.latex?a%20%5Cin%20%5Cmathbb%7BZ%7D%5E%7B*%7D_%7Bn%7D) is a generator if ![ai](https://latex.codecogs.com/gif.latex?a%5Ei) for ![inequality](https://latex.codecogs.com/gif.latex?1%20%5Cleq%20i%20%5Cleq%20%7C%5Cmathbb%7BZ%7D%5E%7B*%7D_%7Bn%7D%7C%20%3D%20%5Cvarphi%28n%29) produces every element in the group without repetition. ![aphi](https://latex.codecogs.com/gif.latex?a%5E%7B%5Cvarphi%28n%29%7D%20%3D%201).
 

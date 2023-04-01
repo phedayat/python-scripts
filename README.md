@@ -61,5 +61,5 @@ This project was originally only supposed to compute the result of running the [
 The original motivator for this script was a problem from Sheldon Axler's [*Linear Algebra Done Right*]() regarding the minimization of an integral on the interval $[-\pi, \pi]$ by finding a polynomial approximation of $\sin(x)$ of at most degree 5. Since we operate in the space of continuous real-valued functions within our interval, our inner product is an integral, and this becomes increasingly tedious to compute. It was also because of the inner product space we were working in that I had to use `sympy` to compute the projections. 
 
 Running the script will produce two windows:
-1. The projections of $\sin{x}$ onto polynomial subspaces of varying dimensions. $P_i = \{p(x) | \text{deg}(p) < i\}$ for $i = 2, ...$. The maximum is determined by the number of subplots to create
+1. The projections of $\sin{x}$ onto polynomial subspaces of varying dimensions. $P_i = \\{p(x) \mid \text{deg}(p) < i\\}$ for $i = 2, 3, ..., {\tt MAX}$. The maximum is determined by the number of subplots to create
 2. The MSE loss per basis dimension of the projection and $\sin{x}$

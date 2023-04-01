@@ -63,3 +63,7 @@ The original motivator for this script was a problem from Sheldon Axler's [*Line
 Running the script will produce two windows:
 1. The projections of $\sin{x}$ onto polynomial subspaces of varying dimensions. $P_i = \\{p(x) \mid \text{deg}(p) < i\\}$ for $i = 2, 3, ..., {\tt MAX}$. The maximum is determined by the number of subplots to create
 2. The MSE loss per basis dimension of the projection and $\sin{x}$
+
+The script is customizable in 2 ways: function and interval. Changing the function `f` to any function representable by `sympy` will produce results. Changing `DISP_INTERVAL` will change the interval we're approximating within.
+
+__[WARNING]__ The larger the interval, the longer it'll take to finish.

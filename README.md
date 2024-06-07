@@ -40,11 +40,19 @@ Uses Python with Turtle to draw a Barnsley Fern, a fractal that uses four
 affine transformations to plot out a fern.
 
 ### generators.py
-(There are some images embedded here; I'd recommend switching to light mode! :D)
+This script finds all the generators of the multiplicative group $(\mathbb{Z}^{*}_{n}, \cdot)$. 
 
-This script finds all the generators of the multiplicative group ![Group](https://latex.codecogs.com/gif.latex?%28%5Cmathbb%7BZ%7D%5E%7B*%7D_%7Bn%7D%2C%20%5Ccdot%29). In group theory, ![ainznstar](https://latex.codecogs.com/gif.latex?a%20%5Cin%20%5Cmathbb%7BZ%7D%5E%7B*%7D_%7Bn%7D) is a generator if ![ai](https://latex.codecogs.com/gif.latex?a%5Ei) for ![inequality](https://latex.codecogs.com/gif.latex?1%20%5Cleq%20i%20%5Cleq%20%7C%5Cmathbb%7BZ%7D%5E%7B*%7D_%7Bn%7D%7C%20%3D%20%5Cvarphi%28n%29) produces every element in the group without repetition. ![aphi](https://latex.codecogs.com/gif.latex?a%5E%7B%5Cvarphi%28n%29%7D%20%3D%201).
+In group theory
 
-For prime n, ![znnozero](https://latex.codecogs.com/gif.latex?%5Cmathbb%7BZ%7D%5E%7B*%7D_%7Bn%7D%20%3D%20%5Cmathbb%7BZ%7D_n-%5C%7B0%5C%7D), because an element ![ainzn](https://latex.codecogs.com/gif.latex?a%20%5Cin%20%5Cmathbb%7BZ%7D_%7Bn%7D) is a unit if it's coprime to n, i.e. ![gcd](https://latex.codecogs.com/gif.latex?%5Cgcd%7Ba%2C%20n%7D%20%3D%201). Thus, all elements of ![zn](https://latex.codecogs.com/gif.latex?%5Cmathbb%7BZ%7D_n) except 0 are coprime to n. This means all elements of ![zn](https://latex.codecogs.com/gif.latex?%5Cmathbb%7BZ%7D_n) except 0 are units and in ![znstar](https://latex.codecogs.com/gif.latex?%5Cmathbb%7BZ%7D%5E%7B*%7D_%7Bn).
+$$a \in \mathbb{Z}^{*}_n$$
+
+is a generator if $a^i$ for $1 \leq i \leq \lvert \mathbb{Z}^{*}_{n} \rvert = \phi(n)$ produces every element in the group without repetition. $a^{\phi(n)} = 1$.
+
+For prime $n$, 
+
+$$\mathbb{Z}^{*}_n = \mathbb{Z}_n - \{0\}$$
+
+because an element $a \in \mathbb{Z}_n$ is a unit if it's coprime to $n$, i.e. $\gcd{a, n} = 1$. Thus, all elements of $\mathbb{Z}_n$ except $0$ are coprime to $n$. This means all elements of $\mathbb{Z}_n$ except $0$ are units and in $\mathbb{Z}^{*}_n$.
 
 ### Convex Hull Algorithm
 

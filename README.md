@@ -23,16 +23,16 @@ interview. Used it again later to begin teaching a friend of mine Python. I
 started toying around with it and have been getting some cool results.
 Currently, it uses some basic geometry to create stars with n points.
 
-* n ≤ 2 creates a line
-* n = 3 creates a triangle
-* n = 4 creates a square
-* n ≥ 5 creates stars with n points
+* $n \leq 2$ creates a line
+* $n = 3$ creates a triangle
+* $n = 4$ creates a square
+* $n \geq 5$ creates stars with n points
 
 ### Heap.py
 
-A script that shows how Heap's Algorithm works. Heap's Algorithm is meant 
-for finding all the permutations of a list. If you have a list of length
-3, the number of permutations will be 3! or 6.
+A script that shows how Heap's Algorithm works. Heap's Algorithm finds 
+all the permutations of a list. For example, if you have a list of length
+$3$, the number of permutations will be $3!$ or $6$.
 
 ### Fern.py
 
@@ -42,7 +42,7 @@ affine transformations to plot out a fern.
 ### generators.py
 This script finds all the generators of the multiplicative group $(\mathbb{Z}^{*}_{n}, \cdot)$. 
 
-In group theory
+In group theory,
 
 $$a \in \mathbb{Z}^{*}_n$$
 
